@@ -43,13 +43,13 @@ commentRouter.route("/getAllById").get((req, res) => {
     }, { merge: true })
     .then(function (doc) {
       console.log(doc)
-      res.send(doc)
+
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
-    location.reload();
-    //res.redirect("https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId)
+
+    res.redirect("https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId)
   }else{
     res.redirect('https://fullproject-frontend.herokuapp.com/views/login.html')
   }
