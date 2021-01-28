@@ -55,7 +55,7 @@ console.log('here your user'+ userId)
 
             
         </div>
-        <p class="comments__list-date">${date}</p>
+        
     </div>
 
           `);
