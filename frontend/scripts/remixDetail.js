@@ -41,7 +41,7 @@ console.log('here your user'+ userId)
      const newdate=new Date(comments[i].date*1000)
   console.log(newdate)
 
-      console.log(JSON.stringify(comments[i].date) + " "+date)
+      console.log(JSON.stringify(comments[i].date) + " "+newdate)
   
 
       $(".comments").append(`
