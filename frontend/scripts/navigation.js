@@ -1,5 +1,6 @@
 async function getUserInfo(id) {
   let response = await fetch("https://fullproject-backend.herokuapp.com/authentication/getById/" + id, { mode: "cors" });
+  console.log(response)
   return await response.json();
 }
 
