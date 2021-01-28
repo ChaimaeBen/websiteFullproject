@@ -12,7 +12,7 @@ window.onload = () => {
   async function runAll(url) {
     console.log("entered");
     if (url) {
-      const [user] = await Promise.all([getUserInfo(url)]);
+      const user = await getUserInfo(url);
 
       console.log("a user " + user);
       $(".user-nav").append(`
