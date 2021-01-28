@@ -5,7 +5,6 @@ async function getUserInfo(id) {
 }
 
 window.onload = () => {
-  console.log("href " + window.location.search);
   var url = window.location.search;
   url = url.replace("?id=", "");
   console.log(url);

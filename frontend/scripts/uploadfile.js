@@ -29,7 +29,6 @@ $("#uploadForm").submit(function (e) {
   var storageReference = firebase.storage().ref();
   var file = document.getElementById("customFile").files[0];
   var id =$('input[name="uid"]').val();
-   console.log(file)
 fileName=file.name;
    var ext = fileName.substr(fileName.lastIndexOf('.') + 1);
  console.log(ext)

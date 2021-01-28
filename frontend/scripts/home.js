@@ -12,9 +12,6 @@ async function getUserInfo(id) {
 
 
 window.onload = () => {
-
-
-  console.log("href " + window.location.search);
   var url = window.location.search;
   url = url.replace("?id=", "");
   console.log(url);
@@ -37,7 +34,7 @@ window.onload = () => {
       $(".trending__list").append(`
           <div class="trending__list-item">
           
-             <a href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${getAll[i].id}">
+             <a href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${getAll[i].id}&id=${url}">
              
              <img src="../img/albumPicture.png" alt="picture of album" class="trending__list-item-image">
              <p class="trending__list-item-title">${getAll[i].name}</p>
