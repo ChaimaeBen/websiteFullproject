@@ -57,14 +57,17 @@ window.onload = () => {
 
 
     for (let i = 0; i < newest.length; i++) {
+      console.log(newest)
       const user = await getNameUser(newest[i].userId);
 
       $(".random__list").append(`
       
       <div class="random__list-item">
+      <a href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${newest[i].id}&id=${url}">
       <img src="../img/albumPicture.png" alt="picture of album" class="random__list-item-image">
       <p class="random__list-item-title">${newest[i].name}</p>
       <p class="random__list-item-author">By ${user.firstname}</p>
+      </a>
   </div>  
 
 
