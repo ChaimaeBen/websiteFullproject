@@ -1,0 +1,226 @@
+.container {
+  .banner {
+    position: relative;
+    &__image {
+      height: 90vh;
+      width: 99.1vw;
+      background-size: cover;
+      background-position: top;
+    }
+
+    &__title {
+      color: #d3dde1;
+      font-size: 8rem;
+      position: absolute;
+      top: 15%;
+      left: 31%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    &__text {
+      color: #d2d2d6;
+      font-size: 3rem;
+      position: absolute;
+      top: 35%;
+      left: 16%;
+    }
+
+    &__button {
+      &,
+      &:link,
+      &:visited {
+        color: #fff8fb;
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: 46%;
+        padding: 2rem;
+        border-radius: 50%;
+        background-color: #db1572;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        font-size: 2rem;
+        border-radius: 10rem;
+        transition: all 0.2s;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+
+        &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+      }
+    }
+  }
+
+  .btn--pink {
+    background-color: #db1572;
+    color: #fff8fb;
+
+    &::after {
+      background-color: #db1572;
+    }
+  }
+
+  .btn--animated {
+    animation: moveInBottom 0.5 ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+
+  .attention {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+    &__headers {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 3rem;
+
+      &-main {
+        color: #0f1225;
+        font-size: 5rem;
+      }
+      &-question {
+        color: #000942;
+        font-size: 2.5rem;
+        font-weight: 400;
+      }
+
+      &-solution {
+        color: #db1572;
+        font-size: 3rem;
+        margin-top: 3rem;
+      }
+    }
+
+    &__image {
+      padding-right: 3rem;
+      height: 50rem;
+    }
+  }
+
+  .tutorial {
+    height: 75vh;
+    background-color: #11152e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__title {
+      color: #2fe4b3;
+      font-size: 3rem;
+    }
+
+    &__explanation {
+      color: #ffffff;
+      font-size: 2rem;
+    }
+  }
+
+  .action {
+    height: 100vh;
+    background-image: url("../../img/stageConcert.png");
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__area {
+      background-color: rgba($color: #fff, $alpha: 0.77);
+      height: 75vh;
+      width: 60vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+    }
+
+    &__title {
+      color: #0f462c;
+      font-size: 6rem;
+    }
+
+    &__text {
+      font-size: 4rem;
+      color: #010000;
+      margin-top: -15rem;
+    }
+
+    &__button {
+      &,
+      &:link,
+      &:visited {
+        color: #fff8fb;
+        text-transform: uppercase;
+
+        border-radius: 50%;
+        background-color: #2fe4b3;
+        text-decoration: none;
+        padding: 1.5rem 8rem;
+        font-size: 2rem;
+        border-radius: 10rem;
+        transition: all 0.2s;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+
+        &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+      }
+    }
+  }
+}
