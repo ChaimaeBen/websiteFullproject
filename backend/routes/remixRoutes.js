@@ -15,6 +15,20 @@ URL = require("url");
 
 //newest
 
+remixRouter.route("/getByNew").get((req, res) => {
+  db.collection("remixes").orderBy("date", "desc").limit(6).get().then((el) => {
+    console.log(el);
+    let data = el.docs.map((doc) => {
+      return { id: doc.id, data: doc.data() }
+    });
+    console.log(...data);
+    res.send(data);
+  })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 remixRouter.route("/getById").get((req, res) => {
   //get the detail information of the remix by remix id
   console.log("id here: " + req.query.id);
@@ -32,25 +46,26 @@ remixRouter.route("/getById").get((req, res) => {
 
 remixRouter.route("/saveUpload").post((req, res) => {
 
-  var user =  firebase.auth().currentUser.uid;
+  var user = firebase.auth().currentUser.uid;
 
-  if(user){
-  console.log('save loaded backend '+req.body.uid)
-  console.log("id here: " + req.body.name);
-  firebase.firestore().collection("remixes").doc(req.body.uid).set({
-    name: req.body.name,
-    userId:user,
-    date:new Date()
-  }, { merge: true })
-  .then(function (doc) {
-    console.log(doc)
-    res.send(doc)
-  })
-  .catch(function (error) {
-    console.error("Error adding document: ", error);
-  });
-  res.send(req.body)}
-  else{
+  if (user) {
+    console.log('save loaded backend ' + req.body.uid)
+    console.log("id here: " + req.body.name);
+    firebase.firestore().collection("remixes").doc(req.body.uid).set({
+      name: req.body.name,
+      userId: user,
+      date: new Date()
+    }, { merge: true })
+      .then(function (doc) {
+        console.log(doc)
+        res.send(doc)
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    res.send(req.body)
+  }
+  else {
     res.redirect('https://fullproject-frontend.herokuapp.com/views/login.html')
   }
 });
@@ -96,14 +111,14 @@ remixRouter.get("/downloadById/:id", (req, res) => {
     if (doc.exists) {
       console.log("Document data:", doc.data().name);
       storageRef
-      .child(`remixes/${req.params.id}/${doc.data().name}`)
-      .getDownloadURL()
-      .then((url) => {
-        res.redirect(url);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .child(`remixes/${req.params.id}/${doc.data().name}`)
+        .getDownloadURL()
+        .then((url) => {
+          res.redirect(url);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       console.log("No such document!");
     }
