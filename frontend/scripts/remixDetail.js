@@ -47,8 +47,7 @@ console.log('here your user'+ userId)
             <p class="comments__list-info-name">${name} ${last}</p>
             <p class="comments__list-info-comment">${comments[i].comment}</p>
         </div>
-        <p class="comments__list-date">${comments[i].date.timestamp.toDate().getTime()
-        }</p>
+        <p class="comments__list-date">${comments[i].date}</p>
     </div>
 
           `);
