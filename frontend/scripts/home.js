@@ -45,7 +45,7 @@ window.onload = () => {
       $(".trending__list").append(`
           <div class="trending__list-item">
           
-             <a href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${getAll[i].id}&id=${url}">
+             <a class="trending__list-item-link" href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${getAll[i].id}&id=${url}">
              
              <img src="../img/albumPicture.png" alt="picture of album" class="trending__list-item-image">
              <p class="trending__list-item-title">${getAll[i].name}</p>
@@ -57,15 +57,17 @@ window.onload = () => {
 
 
     for (let i = 0; i < newest.length; i++) {
-      console.log(newest)
-      const user = await getNameUser(newest[i].userId);
+      console.log("og "+JSON.stringify(newest))
+
+      console.log("newest data "+ JSON.stringify(newest[i].data))
+      const user = await getNameUser(newest[i].data.userId);
 
       $(".random__list").append(`
       
       <div class="random__list-item">
-      <a href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${newest[i].id}&id=${url}">
+      <a class="random__list-item-link" href="https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId=${newest[i].data.id}&id=${url}">
       <img src="../img/albumPicture.png" alt="picture of album" class="random__list-item-image">
-      <p class="random__list-item-title">${newest[i].name}</p>
+      <p class="random__list-item-title">${newest[i].data.name}</p>
       <p class="random__list-item-author">By ${user.firstname}</p>
       </a>
   </div>  

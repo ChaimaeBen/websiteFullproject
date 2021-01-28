@@ -142,6 +142,9 @@ body {
       justify-content: space-between;
       align-items: center;
       margin-top: 2rem; }
+      .homecontainer .trending__list-item-link {
+        text-decoration: none;
+        color: #0f1225; }
       .homecontainer .trending__list-item-image {
         width: 15rem;
         height: 15rem; }
@@ -199,6 +202,9 @@ body {
       justify-content: space-between;
       align-items: center;
       margin-top: 2rem; }
+      .homecontainer .random__list-item-link {
+        text-decoration: none;
+        color: #0f1225; }
       .homecontainer .random__list-item-image {
         width: 15rem;
         height: 15rem; }
@@ -743,7 +749,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
-    height: 100vh;
+    height: 80vh;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 3px;

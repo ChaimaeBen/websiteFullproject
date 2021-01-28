@@ -131,8 +131,11 @@
       align-items: center;
       margin-top: 2rem;
       &-item {
-        text-decoration: none;
-        color:#0f1225;
+    
+        &-link{
+          text-decoration: none;
+          color:#0f1225;
+        }
         &-image {
           width: 15rem;
           height: 15rem;
@@ -223,6 +226,10 @@
       align-items: center;
       margin-top: 2rem;
       &-item {
+        &-link{
+          text-decoration: none;
+          color:#0f1225;
+        }
         &-image {
           width: 15rem;
           height: 15rem;

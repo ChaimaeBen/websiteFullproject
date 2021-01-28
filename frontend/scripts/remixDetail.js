@@ -26,7 +26,7 @@ window.onload = () => {
 
   const remixId = urlParams.get("remixId");
   const userId = urlParams.get("id");
-
+  $('input[name="remixId"]').val(remixId);
 console.log('here your user'+ userId)
   console.log('here is the remixId of comment' + remixId)
 
