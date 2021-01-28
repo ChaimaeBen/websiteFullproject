@@ -15,17 +15,16 @@ async function getUserInfo(id) {
 
 window.onload = () => {
   var url = window.location.search;
-  url = url.replace("?remixId=", "");
-  $('input[name="remixId"]').val(url);
+  const urlParams = new URLSearchParams(url);
 
-  var uri = window.location.search;
-  uri = uri.replace("&id=", "");
+  const remixId = urlParams.get("remixId");
+  const userId = urlParams.get("id");
 
-console.log('here your '+ uri)
-  console.log('here is the remixId of comment' + url)
-  async function detailRun(url) {
-    const [user,comments] = await Promise.all([ getUserInfo(uri),
-      getComments(url),
+console.log('here your user'+ userId)
+  console.log('here is the remixId of comment' + remixId)
+  async function detailRun(userId,remixId) {
+    const [user,comments] = await Promise.all([ getUserInfo(userId),
+      getComments(remixId),
 
     ]);
     for (let i = 0; i < comments.length; i++) {
@@ -44,7 +43,7 @@ console.log('here your '+ uri)
 
     }
 
-    if (url) {
+    if (userId) {
 
       console.log("a user " + user);
       $(".user-nav").append(`
@@ -64,7 +63,7 @@ console.log('here your '+ uri)
     }
   }
 
-  detailRun(url);
+  detailRun(userId,remixId);
 }
 
 
