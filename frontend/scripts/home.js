@@ -1,14 +1,25 @@
 async function getAllFunc() {
   let response = await fetch(
-    "https://fullproject-backend.herokuapp.com/remix/getAll",{ mode: "cors" } );
+    "https://fullproject-backend.herokuapp.com/remix/getAll", { mode: "cors" });
+  return await response.json();
+}
+
+async function getByNew() {
+  let response = await fetch(
+    "https://fullproject-backend.herokuapp.com/remix/getByNew", { mode: "cors" });
   return await response.json();
 }
 
 async function getUserInfo(id) {
-  let response = await fetch("https://fullproject-backend.herokuapp.com/authentication/getById/"+id, { mode: "cors" });
+  let response = await fetch("https://fullproject-backend.herokuapp.com/authentication/getById/" + id, { mode: "cors" });
   console.log(response)
   return await response.json();
 }
+async function getNameUser(id) {
+  let response = await fetch("https://fullproject-backend.herokuapp.com/authentication/getById/" + id, { mode: "cors" });
+  return await response.json();
+}
+
 
 
 window.onload = () => {
@@ -17,18 +28,18 @@ window.onload = () => {
   console.log(url);
 
 
-  console.log('here you go '+ url)
+  console.log('here you go ' + url)
 
 
   async function run(url) {
     console.log("in the run function ")
 
 
-    const [getAll,user] = await Promise.all([getAllFunc(),getUserInfo(url)]);
+    const [getAll, user, newest] = await Promise.all([getAllFunc(), getUserInfo(url), getByNew()]);
 
-    console.log("here is getal "+JSON.stringify(getAll))
+    console.log("here is getal " + JSON.stringify(getAll))
 
-    
+
     for (let i = 0; i < getAll.length; i++) {
 
       $(".trending__list").append(`
@@ -44,7 +55,25 @@ window.onload = () => {
             `);
     }
 
-     console.log("here is the url "+url)
+
+    for (let i = 0; i < newest.length; i++) {
+      const user = await getNameUser(newest[i].userId);
+
+      $(".random__list").append(`
+      
+      <div class="random__list-item">
+      <img src="../img/albumPicture.png" alt="picture of album" class="random__list-item-image">
+      <p class="random__list-item-title">${newest[i].name}</p>
+      <p class="random__list-item-author">By ${user.firstname}</p>
+  </div>  
+
+
+   ` )
+    }
+
+
+
+    console.log("here is the url " + url)
     if (url) {
 
       console.log("a user " + JSON.stringify(user));
