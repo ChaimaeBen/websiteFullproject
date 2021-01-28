@@ -25,13 +25,13 @@
         </div>
 
         <nav class="user-nav">
-            <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
+            <!-- <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
             <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
             <div class="user-nav__user">
                 <p class="user-nav__user-name">Stefanos Stoikos</p>
                 
                 <img src="../img/userPicture.jpg" alt="user picture" class="user-nav__user-photo">
-            </div>
+            </div> -->
         </nav>
         
     </div>
@@ -71,21 +71,24 @@
         <img src="../img/albumPicture.png" class="player__album">
         </div>
     </div>
-    <div class="addComment">
 
-        <form method="POST" action="https://fullproject-backend.herokuapp.com/comment/Add">
-            <input type="hidden" id="remixId" value="" name="remixId"/>
+    
 
-    <input type="text" placeholder="write a comment here" id="comment" name="comment"> <input type="submit" value="post">
-</form>
-</div>
+
     <div class="subplayer">
 
 
   
         <div class="comments">
         
-
+            <div class="comments__new">
+                <img src="../img/userPicture.jpg" alt="user picture" class="comments__new-image">
+                <form method="POST" action="https://fullproject-backend.herokuapp.com/comment/Add" class="comments__new-form">
+                    <input type="hidden" id="remixId" value="" name="remixId"/>
+                    <input type="text" placeholder="write a comment here" id="comment" name="comment" class="comments__new-input"> 
+                    <input type="submit" value="comment" class="comments__new-button">
+                </form>
+            </div>
 
 
         </div>
@@ -143,12 +146,7 @@
                     <p class="samples__list-info-author">By beatmaker</p>
                 </div>
             </div>
-
-            
         </div>
-
-
-
     </div>
 
     <div class="popup" id="popup">
@@ -204,6 +202,7 @@
  
     <script src="../scripts/uploadfile.js"></script>
     <script src="../scripts/remixDetail.js"></script>
+    <script src="../scripts/navigation.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="shortcut icon" type="image/png" href="img/logo.png">
     <title>Melopia</title>
 </head>
@@ -17,24 +16,23 @@
 
     <div class="navigation">
         <div class="logo">
-            <img src="img/logo.png" alt="beatmaker tools" class="logo__img">
+            <img src="../img/logo.png" alt="beatmaker tools" class="logo__img">
             <p class="logo__title">Melopia</p>
         </div>
 
         <nav class="user-nav">
-            <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
+            <!-- <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
             <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
             <div class="user-nav__user">
                 <p class="user-nav__user-name">Stefanos Stoikos</p>
-                
-                <img src="img/userPicture.jpg" alt="user picture" class="user-nav__user-photo">
-            </div>
+                <img src="../img/userPicture.jpg" alt="user picture" class="user-nav__user-photo">
+            </div> -->
         </nav>
     </div>
 
 
     <div class="register">
-        <img src="img/greenBeat.png" alt="beatmaker instruments" class="register__image">
+        <img src="../img/greenBeat.png" alt="beatmaker instruments" class="register__image">
         <div class="register__right">
             <h1 class="register__right-title">Register</h1>
             <form action="https://fullproject-backend.herokuapp.com/authentication/signup" method="POST" class="register__right-form">
@@ -73,6 +71,6 @@
             <p class="register__right-already">Already have an account? <a href="login.html">Sign in now</a></p>
         </div>
     </div>
-    
+    <script src="../scripts/navigation.js"></script>
 </body>
 </html>
