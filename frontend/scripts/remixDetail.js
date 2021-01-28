@@ -39,7 +39,7 @@ console.log('here your user'+ userId)
     for (let i = 0; i < comments.length; i++) {
      const user = await getNameUser(comments[i].userId);
      const date = new Date(comments[i].date).toDateString()
-      console.log(JSON.stringify(comments[i].date) + " "date)
+      console.log(JSON.stringify(comments[i].date) + " "+date)
   
 
       $(".comments").append(`
