@@ -38,7 +38,7 @@ console.log('here your user'+ userId)
     ]);
     for (let i = 0; i < comments.length; i++) {
      const user = await getNameUser(comments[i].userId);
-     const newdate=new Date(comments[i].date*1000)
+     const newdate=new Date(comments[i].date.Date*1000)
   console.log(newdate)
 
       console.log(JSON.stringify(comments[i].date) + " "+newdate)
