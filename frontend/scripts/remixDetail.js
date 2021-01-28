@@ -38,7 +38,7 @@ console.log('here your user'+ userId)
     ]);
     for (let i = 0; i < comments.length; i++) {
      const user = await getNameUser(comments[i].userId);
-
+     const date = comments[i].date.toDate().toDateString()
       console.log(JSON.stringify(comments[i].date))
   
 
@@ -53,12 +53,13 @@ console.log('here your user'+ userId)
 
             
         </div>
-        <p class="comments__list-date">${comments[i].date}</p>
+        <p class="comments__list-date">${date}</p>
     </div>
 
           `);
+        
 
-
+          $(". player__play-stats-comments-number").append(`${ comments.length}`)
     }
 
     if (userId) {
