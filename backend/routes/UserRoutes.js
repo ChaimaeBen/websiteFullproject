@@ -58,6 +58,7 @@ userRouter
         res.redirect("https://fullproject-frontend.herokuapp.com/views/home.html?id="+user.uid);
       })
       .catch((error) => {
+        console.log(error)
         var errorCode = error.code;
         var errorMessage = error.message;
       });
