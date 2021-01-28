@@ -48,7 +48,8 @@ commentRouter.route("/getAllById").get((req, res) => {
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
-     res.redirect("https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId)
+    location.reload();
+    //res.redirect("https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId)
   }else{
     res.redirect('https://fullproject-frontend.herokuapp.com/views/login.html')
   }
