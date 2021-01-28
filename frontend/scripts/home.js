@@ -47,7 +47,7 @@ window.onload = () => {
      console.log("here is the url "+url)
     if (url) {
 
-      console.log("a user " + user);
+      console.log("a user " + JSON.stringify(user));
       $(".user-nav").append(`
 <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
 <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
