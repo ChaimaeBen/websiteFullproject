@@ -35,6 +35,8 @@ console.log('here your user'+ userId)
 
     ]);
     for (let i = 0; i < comments.length; i++) {
+
+      console.log(JSON.stringify(comments[i].date))
      var name = getNameUser(comments[i].userId).then(val=>val.firstname);
      var last = getNameUser(comments[i].userId).then(val=>val.lastname);
 
@@ -45,7 +47,8 @@ console.log('here your user'+ userId)
             <p class="comments__list-info-name">${name} ${last}</p>
             <p class="comments__list-info-comment">${comments[i].comment}</p>
         </div>
-        <p class="comments__list-date">${comments[i].date.timestamp.toDate() }</p>
+        <p class="comments__list-date">${comments[i].date.timestamp.toDate().getTime()
+        }</p>
     </div>
 
           `);
