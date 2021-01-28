@@ -13,9 +13,34 @@ URL = require("url");
 
 //discover
 
+remixRouter.route("/search/:name").get((req, res) => {
+
+  var db = firebase.firestore();
+
+  db.collection("remixes")
+    .where("name", "==",req.params.name)
+    .get()
+    .then((el) => {
+      // console.log(el);
+      let data = el.docs.map((doc) => {
+        return {
+          id: doc.id,
+          data: doc.data(),
+        };
+      });
+      console.log(...data);
+      // le log des data ca marche mais res.send y a une erreur va savoir
+       res.send(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+})
+
 //newest
 
 remixRouter.route("/getByNew").get((req, res) => {
+  var db = firebase.firestore();
   db.collection("remixes").orderBy("date", "desc").limit(6).get().then((el) => {
     console.log(el);
     let data = el.docs.map((doc) => {
