@@ -35,12 +35,14 @@ console.log('here your user'+ userId)
 
     ]);
     for (let i = 0; i < comments.length; i++) {
+     var name = getNameUser(comments[i].userId).then(val=>val.firstname);
+     var last = getNameUser(comments[i].userId).then(val=>val.lastname);
 
       $(".comments").append(`
         <div class="comments__list">
         <img src="../img/userPicture.jpg" alt="user picture" class="comments__list-image">
         <div class="comments__list-info">
-            <p class="comments__list-info-name">${getNameUser(comments[i].userId).then(val=>val.firstname, val.lastname)}</p>
+            <p class="comments__list-info-name">${name} ${last}</p>
             <p class="comments__list-info-comment">${comments[i].comment}</p>
         </div>
         <p class="comments__list-date">${comments[i].date.timestamp.toDate() }</p>
