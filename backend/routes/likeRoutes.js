@@ -30,6 +30,7 @@ likeRouter.route("/verify/:remixId").get((req, res) => {
             console.log("Document data:", doc.data());
             res.send(doc.data());
           } else {
+            res.send("no document")
             console.log("No such document!");
           }
         })
