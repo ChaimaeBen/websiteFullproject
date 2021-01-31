@@ -26,7 +26,12 @@ likeRouter.route("/verify/:remixId").get((req, res) => {
     if (user) {
     var req=firebase.firestore().collection("likes").doc().where('remixId', '==', req.params.remixId).where("userId", "==", user).get();
         req.then(function (doc) {
-          res.send(doc);
+          if (doc.exists) {
+            console.log("Document data:", doc.data());
+            res.send(doc.data());
+          } else {
+            console.log("No such document!");
+          }
         })
         .catch(function (error) {
           console.error("Error adding document: ", error);
