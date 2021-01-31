@@ -30,7 +30,8 @@ async function verifyLiked(remixId){
 }
 
 async function likedRun(remixId){
-  var isLiked = verifyLiked(remixId);
+  var isLiked = await verifyLiked(remixId);
+  console.log(isLiked)
   if(!isLiked){
      await liked(remixId);
   }else{
