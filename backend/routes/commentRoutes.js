@@ -43,7 +43,7 @@ commentRouter.route("/getAllById").get((req, res) => {
     }, { merge: true })
     .then(function (doc) {
       console.log(doc)
-      res.redirect("https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId)
+      res.redirect("https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId+"&id="+user)
 
     })
     .catch(function (error) {

@@ -17,6 +17,7 @@ const users = require("./routes/UserRoutes.js");
 const remix = require("./routes/remixRoutes.js")
 const samples = require("./routes/sampleRoutes.js")
 const comment = require("./routes/commentRoutes.js")
+const like = require("./routes/likeRoutes.js")
 
 firebase.initializeApp(firebaseConfig);
 
@@ -29,6 +30,7 @@ app.use("/authentication", users);
 app.use("/remix", remix);
 app.use("/sample", samples);
 app.use("/comment", comment);
+app.use("/likes", like);
 
 app.listen(port, () => {
   console.log(`listening at http://localhost:${port}`);
