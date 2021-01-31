@@ -26,6 +26,9 @@ async function liked(remixId){
   return await response.json();
 }
 
+async function likedRun(remixId){
+  let data = await liked(remixId);
+}
 
 window.onload = () => {
   var url = window.location.search;
@@ -39,8 +42,8 @@ console.log('here your user'+ userId)
 
 
   async function detailRun(userId,remixId) {
-    const [user,comments,like] = await Promise.all([ getUserInfo(userId),
-      getComments(remixId),liked(remixId)
+    const [user,comments] = await Promise.all([ getUserInfo(userId),
+      getComments(remixId)
 
     ]);
     for (let i = 0; i < comments.length; i++) {
