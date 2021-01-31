@@ -28,9 +28,9 @@ likeRouter.route("/verify/:remixId").get((req, res) => {
         req.then(function (doc) {
           if (doc.exists) {
             console.log("Document data:", doc.data());
-            res.send(doc.data());
+            res.json(doc.data());
           } else {
-            res.send("no document")
+            res.json("no document")
             console.log("No such document!");
           }
         })
