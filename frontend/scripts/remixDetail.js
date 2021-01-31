@@ -23,16 +23,19 @@ async function liked(remixId){
   return await response.json();
 }
 
-async function verifyLikes(remixId){
+async function verifyLiked(remixId){
   console.log('here is the remix '+remixId)
   let response = await fetch("https://fullproject-backend.herokuapp.com/likes/verify/"+remixId)
   return await response.json();
 }
 
 async function likedRun(remixId){
-  let data = await verifyLikes(remixId);
-  console.log(data);
-  
+  var isLiked = verifyLiked(remixId);
+  if(!isLiked){
+     await liked(remixId);
+  }else{
+    console.log('disable the button here')
+  }
   
 }
 
