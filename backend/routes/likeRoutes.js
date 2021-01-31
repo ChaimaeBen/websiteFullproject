@@ -3,11 +3,11 @@ var express = require("express");
 const likeRouter = express.Router();
 var firebase = require("firebase");
 
-likeRouter.route("/Add/:remixId").post((req, res) => {
+likeRouter.route("/Add").post((req, res) => {
   let user = firebase.auth().currentUser.uid;
   if (user) {
     firebase.firestore().collection("likes").doc().set({
-        remixId: req.params.remixId,
+        remixId: req.body.remixId,
         userId: user,
       })
       .then(function (doc) {
