@@ -6,10 +6,14 @@ var firebase = require("firebase");
 likeRouter.route("/Add/:remixId").get((req, res) => {
   let user = firebase.auth().currentUser.uid;
   if (user) {
-    firebase.firestore().collection("likes").doc().set({
+    firebase
+      .firestore()
+      .collection("likes")
+      .doc()
+      .set({
         remixId: req.params.remixId,
-        userId: user
-          })
+        userId: user,
+      })
       .then(function (doc) {
         console.log(doc);
       })
@@ -22,26 +26,30 @@ likeRouter.route("/Add/:remixId").get((req, res) => {
 });
 
 likeRouter.route("/verify/:remixId").get((req, res) => {
-    let user = firebase.auth().currentUser.uid;
-    if (user) {
-    var req=firebase.firestore().collection("likes").where('userId', '==', user).get()
-    .then(function(doc) {
-      console.log(doc)
-          if(doc.remixId==req.params.remixId){
-            console.log("Document data:", doc.data());
-            res.json(doc.data());
-          } else {
-            console.log("No such document!");
-            res.json(false);
-          }
-        })
-        .catch(function (error) {
-          console.error("Error adding document: ", error);
-        });
-    } else {
-      res.redirect("https://fullproject-frontend.herokuapp.com/views/login.html");
-    }
-  });
+  let user = firebase.auth().currentUser.uid;
+  if (user) {
+    firebase
+      .firestore()
+      .collection("likes")
+      .where("userId", "==", user)
+      .get()
+      .then(function (doc) {
+        console.log(doc);
+        if (user) {
+          console.log("Document data:", doc.data());
+          res.json(doc.data());
+        } else {
+          console.log("No such document!");
+          res.json(false);
+        }
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+  } else {
+    res.redirect("https://fullproject-frontend.herokuapp.com/views/login.html");
+  }
+});
 
 likeRouter.route("/remove").get((req, res) => {
   let user = firebase.auth().currentUser.uid;
