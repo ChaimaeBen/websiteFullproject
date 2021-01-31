@@ -12,9 +12,6 @@ likeRouter.route("/Add/:remixId").post((req, res) => {
       })
       .then(function (doc) {
         console.log(doc);
-        res.redirect(
-          "https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.params.remixId+"&id="+user
-        );
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
