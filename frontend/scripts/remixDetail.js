@@ -30,6 +30,7 @@ async function verifyLiked(remixId){
 
 async function likedRun(remixId){
   var isLiked = await verifyLiked(remixId);
+  console.log('here is the liked')
   var button =document.getElementsByClassName('player__play-stats-likes-icon');
   button.disabled = false
 
