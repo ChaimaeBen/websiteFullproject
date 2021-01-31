@@ -19,8 +19,11 @@ async function getNameUser(id) {
 
 async function liked(remixId){
   console.log('here is the remix '+remixId)
-  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/Add/"+remixId,{ mode: "cors" }); 
-  return await response.json();
+  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/Add/"+remixId, {
+    method: 'POST',
+  })
+  .then(res => res.json()) // or res.json()
+  .then(res => console.log(res))
 }
 
 
