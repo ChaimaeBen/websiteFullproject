@@ -36,6 +36,8 @@ async function likedRun(remixId){
      await liked(remixId);
   }else{
     console.log('disable the button here')
+    document.getElementsByClassName('player__play-stats-likes-icon').onclick = null;
+
   }
   
 }
