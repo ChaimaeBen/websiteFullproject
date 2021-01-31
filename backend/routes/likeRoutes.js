@@ -3,7 +3,7 @@ var express = require("express");
 const likeRouter = express.Router();
 var firebase = require("firebase");
 
-likeRouter.route("/Add/:remixId").post((req, res) => {
+likeRouter.route("/Add/:remixId").get((req, res) => {
   let user = firebase.auth().currentUser.uid;
   if (user) {
     firebase.firestore().collection("likes").doc().set({
