@@ -17,7 +17,11 @@ async function getNameUser(id) {
 }
 
 
-
+async function liked(remixId){
+  console.log('here is the remix '+remixId)
+  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/Add/"+remixId);
+  return await response.json();
+}
 
 
 window.onload = () => {
@@ -33,7 +37,7 @@ console.log('here your user'+ userId)
 
   async function detailRun(userId,remixId) {
     const [user,comments] = await Promise.all([ getUserInfo(userId),
-      getComments(remixId),
+      getComments(remixId)
 
     ]);
     for (let i = 0; i < comments.length; i++) {

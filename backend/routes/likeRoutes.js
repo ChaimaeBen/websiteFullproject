@@ -3,17 +3,17 @@ var express = require("express");
 const likeRouter = express.Router();
 var firebase = require("firebase");
 
-likeRouter.route("/Add").post((req, res) => {
+likeRouter.route("/Add/:remixId").post((req, res) => {
   let user = firebase.auth().currentUser.uid;
   if (user) {
     firebase.firestore().collection("likes").doc().set({
-        remixId: req.body.remixId,
+        remixId: req.params.remixId,
         userId: user,
       })
       .then(function (doc) {
         console.log(doc);
         res.redirect(
-          "https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.body.remixId+"&id="+user
+          "https://fullproject-frontend.herokuapp.com/views/remixDetail.html?remixId="+req.params.remixId+"&id="+user
         );
       })
       .catch(function (error) {
