@@ -30,10 +30,6 @@ async function verifyLiked(remixId){
 
 async function likedRun(remixId){
   console.log(remixId)
-  var isLiked = await verifyLiked(remixId);
-  console.log('here is the liked')
-  var button =document.getElementsByClassName('player__play-stats-likes-icon');
-  button.disabled = false
 
   /*
   if(!isLiked){
@@ -47,6 +43,10 @@ async function likedRun(remixId){
 }
 
 window.onload = () => {
+  //var heart =document.getElementById('heartButton');
+ // heart.disabled = true;
+
+
   var url = window.location.search;
   const urlParams = new URLSearchParams(url);
 
@@ -58,10 +58,14 @@ console.log('here your user'+ userId)
 
 
   async function detailRun(userId,remixId) {
-    const [user,comments] = await Promise.all([ getUserInfo(userId),
-      getComments(remixId)
+    const [user,comments,verify] = await Promise.all([ getUserInfo(userId),
+      getComments(remixId),verifyLiked(remixId)
 
     ]);
+    console.log("here is the ver "+verify)
+
+
+
     for (let i = 0; i < comments.length; i++) {
      const user = await getNameUser(comments[i].userId);
      const newdate=new Date(comments[i].date.Date*1000)

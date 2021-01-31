@@ -561,6 +561,10 @@ body {
           height: 3rem;
           width: 3rem;
           fill: #db1572; }
+        .player__play-stats-likes-icon:active {
+          height: 3rem;
+          width: 3rem;
+          fill: #d1b1c0; }
         .player__play-stats-likes-number {
           margin-left: 2rem; }
       .player__play-stats-comments {
@@ -749,7 +753,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
-    height: 100vh;
+    height: 80vh;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 3px;

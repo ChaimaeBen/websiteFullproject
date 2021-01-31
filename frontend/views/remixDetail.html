@@ -52,9 +52,11 @@
             <div class="player__play-stats">
 
                 <div class="player__play-stats-likes">
-                    <svg class="player__play-stats-likes-icon" id="heartButton" onclick="likedRun(document.getElementById('remixId').value)">
+                    <button onclick="likedRun(document.getElementById('remixId').value)" id="heartButton">
+                    <svg class="player__play-stats-likes-icon"  >
                         <use xlink:href="../img/sprite.svg#icon-heart" ></use>
                     </svg>
+                </button>
                     <p class="player__play-stats-likes-number">89</p>
                 </div>
 
