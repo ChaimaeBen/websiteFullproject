@@ -23,9 +23,16 @@ async function liked(remixId){
   return await response.json();
 }
 
+async function verifyLikes(remixId){
+  console.log('here is the remix '+remixId)
+  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/verify/"+remixId)
+  return await response.json();
+}
+
 async function likedRun(remixId){
-  let data = await liked(remixId);
+  let data = await verifyLikes(remixId);
   console.log(data);
+  
   
 }
 

@@ -8,9 +8,8 @@ likeRouter.route("/Add/:remixId").get((req, res) => {
   if (user) {
     firebase.firestore().collection("likes").doc().set({
         remixId: req.params.remixId,
-        userId: user,
-        date:new Date()
-      })
+        userId: user
+          })
       .then(function (doc) {
         console.log(doc);
       })
@@ -21,6 +20,21 @@ likeRouter.route("/Add/:remixId").get((req, res) => {
     res.redirect("https://fullproject-frontend.herokuapp.com/views/login.html");
   }
 });
+
+likeRouter.route("/verify/:remixId").get((req, res) => {
+    let user = firebase.auth().currentUser.uid;
+    if (user) {
+    var req=firebase.firestore().collection("likes").doc().where('remixId', '==', req.params.remixId).where("userId", "==", user).get();
+        req.then(function (doc) {
+          res.send(doc);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
+    } else {
+      res.redirect("https://fullproject-frontend.herokuapp.com/views/login.html");
+    }
+  });
 
 likeRouter.route("/remove").get((req, res) => {
   let user = firebase.auth().currentUser.uid;
