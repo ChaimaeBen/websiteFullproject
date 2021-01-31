@@ -25,7 +25,7 @@ likeRouter.route("/verify/:remixId").get((req, res) => {
     let user = firebase.auth().currentUser.uid;
     if (user) {
     var req=firebase.firestore().collection("likes").where('remixId', '==', req.params.remixId).where('userId', '==', user).get();
-        req.then(function (doc) {
+        req.then(function(doc) {
           if (doc.exists) {
             console.log("Document data:", doc.data());
             res.json(doc.data());

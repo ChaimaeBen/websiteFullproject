@@ -19,26 +19,27 @@ async function getNameUser(id) {
 
 async function liked(remixId){
   console.log('here is the remix '+remixId)
-  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/Add/"+remixId)
+  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/Add/"+remixId, { mode: "cors" })
   return await response.json();
 }
 
 async function verifyLiked(remixId){
   console.log('here is the remix '+remixId)
-  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/verify/"+remixId)
+  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/verify/"+remixId, { mode: "cors" })
   return await response.json();
 }
 
 async function likedRun(remixId){
   var isLiked = await verifyLiked(remixId);
   console.log(isLiked)
+  /*
   if(!isLiked){
      await liked(remixId);
   }else{
     console.log('disable the button here')
     document.getElementsByClassName('player__play-stats-likes-icon').onclick = null;
 
-  }
+  }*/
   
 }
 
