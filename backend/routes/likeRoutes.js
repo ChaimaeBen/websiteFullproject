@@ -7,7 +7,7 @@ likeRouter.route("/Add/:remixId").get((req, res) => {
   let user = firebase.auth().currentUser.uid;
   if (user) {
     firebase.firestore().collection("likes").doc().set({
-        remixId: req.query.remixId,
+        remixId: req.params.remixId,
         userId: user,
         date:new Date()
       })
