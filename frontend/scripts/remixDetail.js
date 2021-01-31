@@ -24,14 +24,15 @@ async function liked(remixId){
 }
 
 async function verifyLiked(remixId){
-  console.log('here is the remix '+remixId)
   let response = await fetch("https://fullproject-backend.herokuapp.com/likes/verify/"+remixId, { mode: "cors" })
   return await response.json();
 }
 
 async function likedRun(remixId){
   var isLiked = await verifyLiked(remixId);
-  console.log(isLiked)
+  var button =document.getElementsByClassName('player__play-stats-likes-icon');
+  button.disabled = false
+
   /*
   if(!isLiked){
      await liked(remixId);
