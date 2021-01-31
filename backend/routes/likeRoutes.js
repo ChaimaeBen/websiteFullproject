@@ -9,6 +9,7 @@ likeRouter.route("/Add").post((req, res) => {
     firebase.firestore().collection("likes").doc().set({
         remixId: req.body.remixId,
         userId: user,
+        date:new Date()
       })
       .then(function (doc) {
         console.log(doc);

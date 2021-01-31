@@ -16,15 +16,21 @@ async function getNameUser(id) {
   return await response.json();
 }
 
-function liked(remixId) {
-  fetch('https://fullproject-backend.herokuapp.com/likes/Add', {
-    method: 'post',
-    body: JSON.stringify(remixId)
-  }).then(function(response) {
-    return response.json();
-  }).then(function(data) {
-    console.log(data)
+
+async function liked(remixId){
+  console.log('here is the remix '+remixId)
+  let response = await fetch("https://fullproject-backend.herokuapp.com/likes/Add", {
+    method: 'POST',
+    mode: 'cors',
+    body:JSON.stringify(remixId)
   });
+  return await response.json();
+}
+
+async function likedRun(remixId){
+  let data = await liked(remixId);
+  console.log(data);
+  
 }
 
 window.onload = () => {
