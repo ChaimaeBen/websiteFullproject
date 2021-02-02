@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="img/logo.png">
+    <title>Melopia</title>
+
+    <script>
+        $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+       
+      if (scroll >= 350) {
+  
+          $(".navWelcome").addClass("navColor");
+      }
+      if (scroll <= 350) {
+  
+          $(".navWelcome").removeClass("navColor");
+      }
+  }); 
+      </script>
+
+</head>
+<body>
+
+    
+    <div class="navWelcome">
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="beatmaker tools" class="logo__img">
+            <p class="logo__title">Melopia</p>
+        </div>
+
+        <nav class="user-nav">
+            <!-- <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
+            <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
+            <div class="user-nav__user">
+                <p class="user-nav__user-name">Stefanos Stoikos</p>
+                
+                <img src="../img/userPicture.jpg" alt="user picture" class="user-nav__user-photo">
+            </div> -->
+        </nav>
+        
+    </div>
+
+    <div class="containerplay" id="containerplay">
+        <div class="player">
+        <div class="player__commands" >
+            <svg class="player__commands-icon">
+                <use xlink:href="../img/sprite.svg#icon-controller-play"></use>
+            </svg>
+        </div>
+
+        <div class="player__play">
+            <h3 class="player__username">Chaimae benhammou</h3>
+            <h3 class="player__title">Over the top</h3>
+            <h3 class="player__publishingdate">20/01/2021</h3>
+
+            <div class="player__play-stats">
+
+                <button class="likebutton">Like</button>
+
+                <div class="player__play-stats-likes">
+                    <svg class="player__play-stats-likes-icon">
+                        <use xlink:href="../img/sprite.svg#icon-heart"></use>
+                    </svg>
+                    <p class="player__play-stats-likes-number">7000</p>
+                </div>
+
+                <div class="player__play-stats-comments">
+                    <svg class="player__play-stats-comments-icon">
+                        <use xlink:href="../img/sprite.svg#icon-chat"></use>
+                    </svg>
+                    <p class="player__play-stats-comments-number"></p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="rightpart">
+            <img src="../img/albumPicture.png" class="player__album">
+            <a href="#popup" class="player__play-stats-upload">Upload now</a>
+        </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="subplayer">
+
+
+  
+        <div class="comments">
+        
+            <div class="comments__new">
+                <img src="../img/userPicture.jpg" alt="user picture" class="comments__new-image">
+                <form method="POST" action="https://fullproject-backend.herokuapp.com/comment/Add" class="comments__new-form">
+                    <input type="hidden" id="remixId" value="" name="remixId"/>
+                    <input type="text" placeholder="write a comment here" id="comment" name="comment" class="comments__new-input"> 
+                    <input type="submit" value="comment" class="comments__new-button">
+                </form>
+            </div>
+
+
+        </div>
+
+        <div class="samples">
+        
+            <h1 class="samples__title">Original sample</h1>
+
+            <div class="samples__audio">
+                <svg class="samples__audio-icon">
+                    <use xlink:href="../img/sprite.svg#icon-controller-play"></use>
+                </svg>
+            </div>
+
+            <button class="samples__button">Download now</button>
+
+            <p class="samples__header">Other creations with<br> this sample</p>
+
+            <div class="samples__list">
+                <img src="../img/albumPicture.png" class="samples__list-image">
+                <div class="samples__list-info">
+                    <p class="samples__list-info-title">Title beat</p>
+                    <p class="samples__list-info-author">By beatmaker</p>
+                </div>
+            </div>
+
+            <div class="samples__list">
+                <img src="../img/albumPicture.png" class="samples__list-image">
+                <div class="samples__list-info">
+                    <p class="samples__list-info-title">Title beat</p>
+                    <p class="samples__list-info-author">By beatmaker</p>
+                </div>
+            </div>
+
+            <div class="samples__list">
+                <img src="../img/albumPicture.png" class="samples__list-image">
+                <div class="samples__list-info">
+                    <p class="samples__list-info-title">Title beat</p>
+                    <p class="samples__list-info-author">By beatmaker</p>
+                </div>
+            </div>
+
+            <div class="samples__list">
+                <img src="../img/albumPicture.png" class="samples__list-image">
+                <div class="samples__list-info">
+                    <p class="samples__list-info-title">Title beat</p>
+                    <p class="samples__list-info-author">By beatmaker</p>
+                </div>
+            </div>
+
+            <div class="samples__list">
+                <img src="../img/albumPicture.png" class="samples__list-image">
+                <div class="samples__list-info">
+                    <p class="samples__list-info-title">Title beat</p>
+                    <p class="samples__list-info-author">By beatmaker</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup__area">
+            <div class="popup__header">
+                <a href="#containerplay" class="popup__header-close">&times;</a>
+                <h1 class="popup__header-title">Upload your beat</h1>
+            </div>
+
+            <div class="popup__content">
+                <form id="uploadForm">
+
+                <h3 class="popup__remixtitle">Title of your remix</h3>
+                <input type="text"  id="titleRemix"  name="titleRemix" placeholder="Remix title..." class="popup__input">
+                
+                <div class="popup__uploadzone">
+                    <h3 class="popup__instruction">Drop your remix here</h3>
+                    <svg class="popup__icon">
+                        <use xlink:href="../img/sprite.svg#icon-upload"></use>
+                    </svg>
+                    <input type="hidden" id="uid" value="" name="uid"/>
+                    <input class="popup__uploadbutton" type="file" id="customFile" name="filename" value="Select a remix"/>
+
+                </div>
+
+                <button type="submit" value="submit" class="popup__post">Post your remix</button>
+            </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-storage.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBjztYt_eXCDoRgPcip2xU2IVtSV8yg95w",
+        authDomain: "fullproject-2e12b.firebaseapp.com",
+        databaseURL:
+          "https://fullproject-2e12b-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "fullproject-2e12b",
+        storageBucket: "fullproject-2e12b.appspot.com",
+        messagingSenderId: "183388416082",
+        appId: "1:183388416082:web:96fd5abf9b3f53038c178b",
+        measurementId: "G-6643M0KBBJ",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    
+    <script src="../scripts/remixDetail.js"></script>
+    <!-- <script src="../scripts//navigation.js"></script> -->
+    <script src="../scripts/uploadfile.js"></script>
+    
+
+</body>
+</html>

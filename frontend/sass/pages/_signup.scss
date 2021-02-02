@@ -1,0 +1,111 @@
+.register {
+  display: flex;
+  align-items: center;
+  padding-top: 10vh;
+  &__image {
+    height: 89.95vh;
+    width: 50vw;
+  }
+
+  &__right {
+    margin: auto;
+    height: 80vh;
+    width: 30%;
+
+    &-title {
+      text-align: center;
+      color: #0f1225;
+      font-size: 5rem;
+      margin-top: 6vh;
+      margin-bottom: 2rem;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      label {
+        position: relative;
+        input {
+          width: 100%;
+          margin-bottom: 2rem;
+          padding: 2rem 0;
+          color: #707070;
+          border: none;
+          border-radius: 10px;
+          background-color: #f1f1f1;
+          padding-left: 2rem;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &-icon {
+        position: absolute;
+        top: 1.3rem;
+        right: 5%;
+        fill: #2fe4b3;
+        height: 3rem;
+        width: 3rem;
+      }
+
+      .lock {
+        position: absolute;
+        right: 4%;
+      }
+    }
+
+    &-button {
+      &,
+      &:link,
+      &:visited {
+        color: #fff8fb;
+        text-transform: uppercase;
+
+        background-color: #2fe4b3;
+        text-decoration: none;
+        padding: 1rem 0;
+
+        border-radius: 10px;
+        transition: all 0.2s;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-top: 4rem;
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+
+        &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+      }
+    }
+
+    &-already {
+      font-size: 2rem;
+      margin-top: 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: #2fe4b3;
+        font-weight: 700;
+      }
+    }
+  }
+}

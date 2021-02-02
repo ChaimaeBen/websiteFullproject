@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../img/logo.png">
+    <title>Melopia</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    
+
+    <script>
+        $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+       
+      if (scroll >= 800) {
+  
+          $(".navWelcome").addClass("navColor");
+      }
+      if (scroll <= 800) {
+  
+          $(".navWelcome").removeClass("navColor");
+      }
+  }); 
+      </script>
+</head>
+<body>
+    <div class="banner">
+        <!-- <img  src="../img/wallpaper.png" alt="background image beatmaker" class="banner__image"> -->
+        <div class="navWelcome">
+            <div class="logo">
+                <img src="../img/logo.png" alt="beatmaker tools" class="logo__img">
+                <p class="logo__title">Melopia</p>
+            </div>
+    
+            <nav class="user-nav">
+                <a href="home.html" class="user-nav__link">Home</a>
+                <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
+                <a href="login.html" class="user-nav__button user-nav__link">Sign in</a>
+            </nav>
+        </div>
+
+        <div class="banner__content">
+            
+                <div class="banner__left">
+                    <h1 class="banner__title">Beats made simple</h1>    
+                    <h3 class="banner__paragraph">Melopia is a tool that helps you<br/> make beats with the power of A.I</h3>    
+                    <a href="sampleGenerator.html" class="banner__button">Get started</a>
+                </div>
+
+                <div class="banner__right">
+                    <img src="../img/albumPicture.png" class="banner__image" alt="picture of an album">
+                    <div class="banner__player"></div>
+                </div>
+            
+        </div>
+
+        <svg class="banner__arrow">
+            <use xlink:href="../img/sprite.svg#icon-arrow-long-down"></use>
+        </svg>
+    </div>
+
+    <div class="explanation">
+        <div class="explanation__text">
+            <h3 class="explanation__title">Is it <span class="really">REALLY</span> that simple?</h3>
+            <p class="explanation__paragraph">Melopia uses the Magenta library and its A.I models
+                to generate beats based on your <span class="textbold">emotions</span> 
+                and on your <span class="textbold">sample</span></p>
+        </div>
+
+        <div class="explanation__steps">
+            
+            <div class="explanation__step">
+                <img class="explanation__image" src="../img/happyboy.png">
+                <div class="step">
+                    <h3 class="step__title">Step one</h3>
+                    <p class="step__text">Activate your camera to permit Melopia<br/>
+                        to get your emotion.</p>
+                    
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="explanation__step">
+                <img class="explanation__image" src="../img/piano.png">
+                <div class="step">
+                    <h3 class="step__title">Step two</h3>
+                    <p class="step__text">Select an instrument and start making<br/>
+                        a sample beat</p>
+                    
+                </div>
+            </div>
+
+            <div class="line"></div>
+            
+            <div class="explanation__step">
+                <img class="explanation__image" src="../img/robotAI.png">
+                <div class="step three">
+                    <h3 class="step__title">Step three</h3>
+                    <p class="step__text">Let the magic of A.I generate a beat<br/>
+                        once satisfied with the sample.</p>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="explanation__step">
+                <img class="explanation__image" src="../img/worldmap.png">
+                <div class="step four">
+                    <h3 class="step__title">Step four</h3>
+                    <p class="step__text">Share your new amazing<br/>
+                        beat with the world.</p>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="call">
+        <h3 class="call__title">Try Melopia for free anytime, anywhere</h3>
+        <p class="call__text">Melopia can help you make beats faster. </p>
+        <a href="sampleGenerator.html" class="call__button">Get started</a>
+    </div>
+
+
+</body>
+</html>
