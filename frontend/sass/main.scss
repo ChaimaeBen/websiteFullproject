@@ -1,10 +1,12 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
+
 @import "components/navWelcome";
 @import "components/navigation";
 @import "components/button";
 @import "components/footer";
+
 
 @import "base/base";
 @import "base/typography";
@@ -16,4 +18,3 @@
 @import "pages/signup";
 @import "pages/login";
 @import "pages/remixdetail";
-@import "pages/index";
