@@ -1,18 +1,16 @@
 async function getAllFunc() {
-  let response = await fetch(
-    "https://fullproject-backend.herokuapp.com/remix/getAll", { mode: "cors" });
+  let response = await fetch("https://fullproject-backend.herokuapp.com/remix/getAll", { mode: "cors" });
   return await response.json();
 }
 
 async function getByNew() {
-  let response = await fetch(
-    "https://fullproject-backend.herokuapp.com/remix/getByNew", { mode: "cors" });
+  let response = await fetch("https://fullproject-backend.herokuapp.com/remix/getByNew", { mode: "cors" });
   return await response.json();
 }
 
 async function getUserInfo(id) {
   let response = await fetch("https://fullproject-backend.herokuapp.com/authentication/getById/" + id, { mode: "cors" });
-  console.log(response)
+  console.log(response);
   return await response.json();
 }
 async function getNameUser(id) {
@@ -20,28 +18,21 @@ async function getNameUser(id) {
   return await response.json();
 }
 
-
-
 window.onload = () => {
   var url = window.location.search;
   url = url.replace("?id=", "");
   console.log(url);
 
-
-  console.log('here you go ' + url)
-
+  console.log("here you go " + url);
 
   async function run(url) {
-    console.log("in the run function ")
-
+    console.log("in the run function ");
 
     const [getAll, user, newest] = await Promise.all([getAllFunc(), getUserInfo(url), getByNew()]);
 
-    console.log("here is getal " + JSON.stringify(getAll))
-
+    console.log("here is getal " + JSON.stringify(getAll));
 
     for (let i = 0; i < getAll.length; i++) {
-
       $(".trending__list").append(`
           <div class="trending__list-item">
           
@@ -55,11 +46,10 @@ window.onload = () => {
             `);
     }
 
-
     for (let i = 0; i < newest.length; i++) {
-      console.log("og "+JSON.stringify(newest))
+      console.log("og " + JSON.stringify(newest));
 
-      console.log("newest data "+ JSON.stringify(newest[i].data))
+      console.log("newest data " + JSON.stringify(newest[i].data));
       const user = await getNameUser(newest[i].data.userId);
 
       $(".random__list").append(`
@@ -73,17 +63,14 @@ window.onload = () => {
   </div>  
 
 
-   ` )
+   `);
     }
 
-
-
-    console.log("here is the url " + url)
+    console.log("here is the url " + url);
     if (url) {
-
       console.log("a user " + JSON.stringify(user));
       $(".user-nav").append(`
-<a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
+<a href="https://fullproject-frontend.herokuapp.com/views/beats.html" class="user-nav__link">Beats</a>
 <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
 <div class="user-nav__user">
     <p class="user-nav__user-name">${user.firstname} ${user.lastname}</p>
@@ -91,16 +78,13 @@ window.onload = () => {
 </div>`);
     } else {
       $(".user-nav").append(`
-    <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
+    <a href="https://fullproject-frontend.herokuapp.com/views/beats.html" class="user-nav__link">Beats</a>
     <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
     <a href="https://fullproject-frontend.herokuapp.com/views/login.html" class="user-nav__link">Login</a>
     <a  href="https://fullproject-frontend.herokuapp.com/views/signup.html" class="user-nav__link">Sign up</a>
 `);
     }
-
-
   }
 
   run(url);
-
-}
+};

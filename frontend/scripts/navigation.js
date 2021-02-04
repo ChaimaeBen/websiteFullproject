@@ -16,7 +16,7 @@ window.onload = () => {
 
       console.log("a user " + user);
       $(".user-nav").append(`
-    <a href="https://fullproject-frontend.herokuapp.com/views/home.html" class="user-nav__link">Home</a>
+    <a href="https://fullproject-frontend.herokuapp.com/views/beats.html" class="user-nav__link">Beats</a>
     <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
     <div class="user-nav__user">
         <p class="user-nav__user-name">${user.firstname} ${user.lastname}</p>
@@ -24,7 +24,7 @@ window.onload = () => {
     </div>`);
     } else {
       $(".user-nav").append(`
-      <a href="home.html" class="user-nav__link">Home</a>
+      <a href="beats.html" class="user-nav__link">Beats</a>
       <a href="sampleGenerator.html" class="user-nav__link">Generate sample</a>
       <a href="login.html" class="user-nav__button user-nav__link">Sign in</a>
     `);

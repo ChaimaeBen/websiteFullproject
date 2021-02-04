@@ -75,13 +75,11 @@
   .navigation .user-nav {
     display: flex;
     align-items: center;
-    margin-right: 8rem;
-    align-self: stretch;
     margin-right: 8rem; }
     .navigation .user-nav > * {
-      padding: 0 2rem;
-      cursor: pointer;
+      padding: 0;
       margin-right: 2rem;
+      cursor: pointer;
       height: 100%;
       display: flex;
       align-items: center; }

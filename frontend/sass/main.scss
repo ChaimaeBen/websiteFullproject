@@ -1,18 +1,16 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
-
 @import "components/navWelcome";
 @import "components/navigation";
 @import "components/button";
 @import "components/footer";
 
-
 @import "base/base";
 @import "base/typography";
 @import "base/animations";
 
-@import "pages/home";
+@import "pages/beats";
 @import "pages/sampleGenerator";
 @import "pages/welcome";
 @import "pages/signup";
