@@ -11,12 +11,11 @@
   align-items: center;
   width: 90%;
   margin: auto;
-  margin-left: 20rem;
 
   .rightpart {
     display: flex;
     flex-direction: column;
-    margin-right: 8rem;
+    margin-right: -13rem;
   }
 
   &__commands {
@@ -31,7 +30,7 @@
   }
 
   &__play {
-    font-size: 2rem;
+    font-size: 3rem;
     display: flex;
     flex-direction: column;
     flex: 0 0 50%;
@@ -263,6 +262,7 @@
       font-size: 3rem;
       color: #db1572;
       margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
     &__audio {
@@ -290,7 +290,7 @@
         transition: all 0.2s;
         text-align: center;
         font-size: 2rem;
-        margin-top: 2rem;
+        margin-top: 4rem;
         border: none;
         cursor: pointer;
       }
@@ -334,8 +334,9 @@
       }
 
       &-info {
+        margin-left: 2rem;
         &-title {
-          font-size: 3rem;
+          font-size: 2rem;
         }
 
         &-author {

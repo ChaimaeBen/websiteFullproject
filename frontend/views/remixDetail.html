@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="shortcut icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <title>Melopia</title>
 
     <script>
@@ -51,17 +53,17 @@
 
     <div class="containerplay" id="containerplay">
         <div class="player">
-        <div class="player__commands" >
-            <svg class="player__commands-icon">
-                <use xlink:href="../img/sprite.svg#icon-controller-play"></use>
-            </svg>
-        </div>
+        
 
         <div class="player__play">
             <h3 class="player__username">Chaimae benhammou</h3>
             <h3 class="player__title">Over the top</h3>
             <h3 class="player__publishingdate">20/01/2021</h3>
-
+            <div class="gap-example test">
+                <audio>
+                    <source src="../music/oDDling - Early Bird.flac" type="audio/mpeg">
+                </audio>
+            </div>
             <div class="player__play-stats">
 
                 <button class="likebutton">Like</button>
@@ -116,10 +118,10 @@
         
             <h1 class="samples__title">Original sample</h1>
 
-            <div class="samples__audio">
-                <svg class="samples__audio-icon">
-                    <use xlink:href="../img/sprite.svg#icon-controller-play"></use>
-                </svg>
+            <div class="originalSamplePlayer test">
+                <audio>
+                    <source src="../music/oDDling - Early Bird.flac" type="audio/mpeg">
+                </audio>
             </div>
 
             <button class="samples__button">Download now</button>
@@ -149,7 +151,7 @@
                     <p class="samples__list-info-author">By beatmaker</p>
                 </div>
             </div>
-
+            
             <div class="samples__list">
                 <img src="../img/albumPicture.png" class="samples__list-image">
                 <div class="samples__list-info">
@@ -177,23 +179,19 @@
 
             <div class="popup__content">
                 <form id="uploadForm">
-
-                <h3 class="popup__remixtitle">Title of your remix</h3>
-                <input type="text"  id="titleRemix"  name="titleRemix" placeholder="Remix title..." class="popup__input">
-                
-                <div class="popup__uploadzone">
-                    <h3 class="popup__instruction">Drop your remix here</h3>
-                    <svg class="popup__icon">
-                        <use xlink:href="../img/sprite.svg#icon-upload"></use>
-                    </svg>
-                    <input type="hidden" id="uid" value="" name="uid"/>
-                    <input class="popup__uploadbutton" type="file" id="customFile" name="filename" value="Select a remix"/>
-
-                </div>
-
-                <button type="submit" value="submit" class="popup__post">Post your remix</button>
-            </form>
-
+                    <h3 class="popup__remixtitle">Title of your remix</h3>
+                    <input type="text"  id="titleRemix"  name="titleRemix" placeholder="Remix title..." class="popup__input">
+                    
+                    <div class="popup__uploadzone">
+                        <h3 class="popup__instruction">Drop your remix here</h3>
+                        <svg class="popup__icon">
+                            <use xlink:href="../img/sprite.svg#icon-upload"></use>
+                        </svg>
+                        <input type="hidden" id="uid" value="" name="uid"/>
+                        <input class="popup__uploadbutton" type="file" id="customFile" name="filename" value="Select a remix"/>
+                    </div>
+                    <button type="submit" value="submit" class="popup__post">Post your remix</button>
+                </form>
             </div>
         </div>
     </div>
@@ -219,7 +217,8 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     
-    
+    <script src="{path}/dist/js/green-audio-player.js"></script>
+    <script> new GreenAudioPlayer('.gap-example'); new GreenAudioPlayer('.originalSamplePlayer');</script>
     <script src="../scripts/remixDetail.js"></script>
     <!-- <script src="../scripts//navigation.js"></script> -->
     <script src="../scripts/uploadfile.js"></script>

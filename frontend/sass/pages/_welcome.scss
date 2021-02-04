@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .banner {
   background-image: url(/frontend/img/wallpaper.png);
   height: 100vh;
@@ -26,11 +30,17 @@
   &__image {
     height: 30rem;
     width: 40rem;
-    border-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
   }
 
   &__right {
     position: relative;
+  }
+
+  .test {
+    margin-top: -1rem;
+    width: 99.5%;
   }
 
   &__player {
@@ -68,6 +78,18 @@
     border-radius: 50%;
     padding: 1rem;
     margin-bottom: 3rem;
+    animation: MoveUpDown 1s linear infinite;
+    cursor: pointer;
+  }
+
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 1rem;
+    }
   }
 
   &__button {
@@ -187,12 +209,13 @@
 }
 
 .call {
-  background-color: #21242e;
-  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vh;
+  background-color: #21242e;
+
   &__title {
     font-size: 5rem;
     color: white;

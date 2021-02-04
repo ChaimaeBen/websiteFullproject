@@ -1,0 +1,27 @@
+.footer {
+  background-color: #333348;
+  height: 35vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__left {
+    font-size: 2rem;
+    color: white;
+  }
+
+  &__right {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+
+  &__company {
+    margin-right: 5rem;
+  }
+
+  &__solutions {
+    margin-right: 5rem;
+  }
+}

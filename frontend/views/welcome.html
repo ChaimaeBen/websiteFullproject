@@ -9,7 +9,11 @@
     <link rel="shortcut icon" type="image/png" href="../img/logo.png">
     <title>Melopia</title>
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{path}/dist/css/green-audio-player.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
 
     <script>
         $(window).scroll(function() {
@@ -24,6 +28,8 @@
           $(".navWelcome").removeClass("navColor");
       }
   }); 
+
+  
       </script>
 </head>
 <body>
@@ -44,26 +50,42 @@
 
         <div class="banner__content">
             
-                <div class="banner__left">
+                <div class="banner__left" data-aos="fade-right"
+                data-aos-offset="700"
+                data-aos-easing="ease-in-sine">
                     <h1 class="banner__title">Beats made simple</h1>    
                     <h3 class="banner__paragraph">Melopia is a tool that helps you<br/> make beats with the power of A.I</h3>    
                     <a href="sampleGenerator.html" class="banner__button">Get started</a>
                 </div>
 
-                <div class="banner__right">
+                <div class="banner__right" data-aos="fade-left"
+                data-aos-offset="700"
+                data-aos-easing="ease-in-sine">
                     <img src="../img/albumPicture.png" class="banner__image" alt="picture of an album">
-                    <div class="banner__player"></div>
+                    <!-- <div class="audioplayer">
+                    <audio controls class="audioplayer__source" >
+                        <source src="../music/oDDling - Early Bird.mp3" type="audio/ogg">Your browser dose not Support the audio Tag
+                        </audio>
+                    </div> -->
+                    <div class="gap-example test">
+                        <audio>
+                            <source src="../music/oDDling - Early Bird.flac" type="audio/mpeg">
+                        </audio>
+                    </div>
                 </div>
-            
         </div>
 
-        <svg class="banner__arrow">
-            <use xlink:href="../img/sprite.svg#icon-arrow-long-down"></use>
-        </svg>
+            <a  onClick="document.getElementById('explanation').scrollIntoView();">
+                <svg class="banner__arrow" data-aos="fade-up" data-aos-offset="700" data-aos-easing="ease-in-sine">
+                <use xlink:href="../img/sprite.svg#icon-arrow-long-down"></use>
+                </svg>
+             </a>
+        
     </div>
+    <div id="explanation"></div>
 
-    <div class="explanation">
-        <div class="explanation__text">
+    <div class="explanation" >
+        <div class="explanation__text" data-aos="zoom-in-down">
             <h3 class="explanation__title">Is it <span class="really">REALLY</span> that simple?</h3>
             <p class="explanation__paragraph">Melopia uses the Magenta library and its A.I models
                 to generate beats based on your <span class="textbold">emotions</span> 
@@ -73,20 +95,19 @@
         <div class="explanation__steps">
             
             <div class="explanation__step">
-                <img class="explanation__image" src="../img/happyboy.png">
-                <div class="step">
+                <img class="explanation__image" src="../img/happyboy.png" data-aos="zoom-in-right">
+                <div class="step" data-aos="zoom-in-left">
                     <h3 class="step__title">Step one</h3>
                     <p class="step__text">Activate your camera to permit Melopia<br/>
                         to get your emotion.</p>
-                    
                 </div>
             </div>
 
             <div class="line"></div>
 
             <div class="explanation__step">
-                <img class="explanation__image" src="../img/piano.png">
-                <div class="step">
+                <img class="explanation__image" src="../img/piano.png" data-aos="zoom-in-right">
+                <div class="step" data-aos="zoom-in-left">
                     <h3 class="step__title">Step two</h3>
                     <p class="step__text">Select an instrument and start making<br/>
                         a sample beat</p>
@@ -97,8 +118,8 @@
             <div class="line"></div>
             
             <div class="explanation__step">
-                <img class="explanation__image" src="../img/robotAI.png">
-                <div class="step three">
+                <img class="explanation__image" src="../img/robotAI.png" data-aos="zoom-in-right">
+                <div class="step three" data-aos="zoom-in-left">
                     <h3 class="step__title">Step three</h3>
                     <p class="step__text">Let the magic of A.I generate a beat<br/>
                         once satisfied with the sample.</p>
@@ -108,8 +129,8 @@
             <div class="line"></div>
 
             <div class="explanation__step">
-                <img class="explanation__image" src="../img/worldmap.png">
-                <div class="step four">
+                <img class="explanation__image" src="../img/worldmap.png" data-aos="zoom-in-right">
+                <div class="step four" data-aos="zoom-in-left">
                     <h3 class="step__title">Step four</h3>
                     <p class="step__text">Share your new amazing<br/>
                         beat with the world.</p>  
@@ -118,12 +139,56 @@
         </div>
     </div>
 
-    <div class="call">
-        <h3 class="call__title">Try Melopia for free anytime, anywhere</h3>
-        <p class="call__text">Melopia can help you make beats faster. </p>
-        <a href="sampleGenerator.html" class="call__button">Get started</a>
+    <div class="call" data-aos="zoom-in">
+        <h3 class="call__title" >Try Melopia for free anytime, anywhere</h3>
+        <p class="call__text" >Melopia can help you make beats faster. </p>
+        <a href="sampleGenerator.html" class="call__button" >Get started</a>
     </div>
 
+    <footer class="footer">
+        <div class="footer__left">
+            <!-- <div class="logo">
+                <img src="../img/logo.png" alt="beatmaker tools" class="logo__img">
+                <p class="logo__title">Melopia</p>
+            </div> -->
+            <h3>Global information</h3>
+            <p>melopia@gmail.com</p>
+            <p>Boudewijnstraat 44</p>
+            <p>0288 89 55 41</p>
 
+        </div>
+
+        <div class="footer__right">
+            <div class="footer__company">
+                <h3>Company</h3>
+                <p>About us</p>
+                <p>Support</p>
+                <p>Case Studies</p>
+                <p>Help</p>
+            </div>
+
+            <div class="footer__solutions">
+                <h3>Solutions</h3>
+                <p>Social Community</p>
+                <p>On-Demand</p>
+                <p>Live streaming</p>
+            </div>
+
+            <div class="footer__social">
+                <h3>Social</h3>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>Instagram</p>
+                <p>Github</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="{path}/dist/js/green-audio-player.js"></script>
+    <script>new GreenAudioPlayer('.gap-example');</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init()</script>
 </body>
 </html>
